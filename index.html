@@ -961,58 +961,14 @@ function setStatus(cls, txt) {
    API
 ═══════════════════════════════════════════ */
 const SS = 'https://api.sofascore.com/api/v1';
+const WORKER = 'https://vitalytics-relay.vitamint1903.workers.dev';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// SofaScore requires browser-like headers — we send these through each proxy
-const SS_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
-  'Accept': 'application/json',
-  'Accept-Language': 'en-GB,en;q=0.9',
-  'Referer': 'https://www.sofascore.com/',
-  'Origin': 'https://www.sofascore.com',
-};
-
-const PROXIES = [
-  // corsproxy.io — most reliable, passes custom headers
-  url => ({ url: `https://corsproxy.io/?${encodeURIComponent(url)}`, headers: SS_HEADERS }),
-  // allorigins — wraps response in JSON {contents:"..."}
-  url => ({ url: `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`, headers: {} }),
-  // cors.sh — requires no extra headers
-  url => ({ url: `https://cors.sh/${url}`, headers: { 'x-cors-api-key': 'temp_' + Math.random().toString(36).slice(2) } }),
-  // corsproxy.org
-  url => ({ url: `https://corsproxy.org/?${encodeURIComponent(url)}`, headers: {} }),
-];
-
 async function api(path) {
-  const target = SS + path;
-  let lastErr = null;
-
-  for (const makeProxy of PROXIES) {
-    try {
-      const { url, headers } = makeProxy(target);
-      const r = await fetch(url, {
-        headers,
-        signal: AbortSignal.timeout(14000),
-      });
-      if (r.status === 403) throw new Error('HTTP 403 — blocked');
-      if (r.status === 404) throw new Error('HTTP 404');
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const text = await r.text();
-      try {
-        const j = JSON.parse(text);
-        // allorigins wraps as { contents: "..." }
-        if (j && typeof j.contents === 'string') return JSON.parse(j.contents);
-        return j;
-      } catch {
-        throw new Error('Bad JSON');
-      }
-    } catch (e) {
-      lastErr = e;
-      console.warn(`Proxy failed:`, e.message);
-      await sleep(600);
-    }
-  }
-  throw new Error(`All proxies failed. Last error: ${lastErr?.message}`);
+  const url = WORKER + '/api/v1' + path;
+  const r = await fetch(url, { signal: AbortSignal.timeout(15000) });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
 }
 
 async function getSeason(tid) {

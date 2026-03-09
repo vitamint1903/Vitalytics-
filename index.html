@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vitalytics — Scottish Football Analytics by @_vitaminT__</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@400;600;700&display=swap"
+rel="stylesheet">
 <style>
   :root {
     --bg:       #0a0a0a;
@@ -750,120 +751,120 @@ line-height: 1.5; font-family: ‘Barlow’, sans-serif;
 ═══════════════════════════════════════════ */
 const LEAGUES_BY_COUNTRY = {
   '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland': [
-    { id: 17,  name: 'Premiership' },
-    { id: 36,  name: 'Championship' },
-    { id: 38,  name: 'League One' },
-    { id: 39,  name: 'League Two' },
+    { id: 179, name: 'Premiership' },
+    { id: 180, name: 'Championship' },
+    { id: 181, name: 'League One' },
+    { id: 182, name: 'League Two' },
   ],
   '🏴󠁧󠁢󠁥󠁮󠁧󠁿 England': [
-    { id: 17335, name: 'Premier League' },
-    { id: 18,    name: 'Championship' },
-    { id: 19,    name: 'League One' },
+    { id: 39,  name: 'Premier League' },
+    { id: 40,  name: 'Championship' },
+    { id: 41,  name: 'League One' },
   ],
   '🇩🇪 Germany': [
-    { id: 35,  name: 'Bundesliga' },
-    { id: 36,  name: '2. Bundesliga' },
-    { id: 37,  name: '3. Liga' },
+    { id: 78,  name: 'Bundesliga' },
+    { id: 79,  name: '2. Bundesliga' },
+    { id: 80,  name: '3. Liga' },
   ],
   '🇪🇸 Spain': [
-    { id: 8,   name: 'La Liga' },
-    { id: 54,  name: 'La Liga 2' },
-    { id: 132, name: 'Primera RFEF' },
+    { id: 140, name: 'La Liga' },
+    { id: 141, name: 'La Liga 2' },
+    { id: 142, name: 'Primera RFEF' },
   ],
   '🇮🇹 Italy': [
-    { id: 23,  name: 'Serie A' },
-    { id: 53,  name: 'Serie B' },
-    { id: 155, name: 'Serie C' },
+    { id: 135, name: 'Serie A' },
+    { id: 136, name: 'Serie B' },
+    { id: 137, name: 'Serie C' },
   ],
   '🇫🇷 France': [
-    { id: 34,  name: 'Ligue 1' },
-    { id: 182, name: 'Ligue 2' },
-    { id: 183, name: 'National' },
+    { id: 61,  name: 'Ligue 1' },
+    { id: 62,  name: 'Ligue 2' },
+    { id: 63,  name: 'National' },
   ],
   '🇳🇱 Netherlands': [
-    { id: 37,  name: 'Eredivisie' },
-    { id: 406, name: 'Eerste Divisie' },
-    { id: 437, name: 'Tweede Divisie' },
+    { id: 88,  name: 'Eredivisie' },
+    { id: 89,  name: 'Eerste Divisie' },
+    { id: 90,  name: 'Tweede Divisie' },
   ],
   '🇵🇹 Portugal': [
-    { id: 238, name: 'Primeira Liga' },
-    { id: 239, name: 'Segunda Liga' },
-    { id: 240, name: 'Liga 3' },
+    { id: 94,  name: 'Primeira Liga' },
+    { id: 95,  name: 'Segunda Liga' },
+    { id: 96,  name: 'Liga 3' },
   ],
   '🇧🇪 Belgium': [
-    { id: 68,  name: 'First Division A' },
-    { id: 69,  name: 'First Division B' },
-    { id: 70,  name: 'Second Amateur' },
+    { id: 144, name: 'First Division A' },
+    { id: 145, name: 'First Division B' },
+    { id: 146, name: 'Second Amateur' },
   ],
   '🇹🇷 Turkey': [
-    { id: 52,  name: 'Süper Lig' },
-    { id: 98,  name: 'TFF 1. Lig' },
-    { id: 99,  name: 'TFF 2. Lig' },
+    { id: 203, name: 'Süper Lig' },
+    { id: 204, name: 'TFF 1. Lig' },
+    { id: 205, name: 'TFF 2. Lig' },
   ],
   '🇳🇴 Norway': [
-    { id: 218, name: 'Eliteserien' },
-    { id: 219, name: '1. divisjon' },
-    { id: 220, name: '2. divisjon' },
+    { id: 103, name: 'Eliteserien' },
+    { id: 104, name: '1. divisjon' },
+    { id: 105, name: '2. divisjon' },
   ],
   '🇸🇪 Sweden': [
-    { id: 231, name: 'Allsvenskan' },
-    { id: 232, name: 'Superettan' },
-    { id: 233, name: 'Division 1' },
+    { id: 113, name: 'Allsvenskan' },
+    { id: 114, name: 'Superettan' },
+    { id: 115, name: 'Division 1' },
   ],
   '🇩🇰 Denmark': [
-    { id: 200, name: 'Superliga' },
-    { id: 201, name: '1. Division' },
-    { id: 202, name: '2. Division' },
+    { id: 119, name: 'Superliga' },
+    { id: 120, name: '1. Division' },
+    { id: 121, name: '2. Division' },
   ],
   '🇦🇹 Austria': [
-    { id: 45,  name: 'Bundesliga' },
-    { id: 46,  name: '2. Liga' },
-    { id: 47,  name: 'Regionalliga' },
+    { id: 218, name: 'Bundesliga' },
+    { id: 219, name: '2. Liga' },
+    { id: 220, name: 'Regionalliga' },
   ],
   '🇨🇭 Switzerland': [
-    { id: 215, name: 'Super League' },
-    { id: 216, name: 'Challenge League' },
-    { id: 217, name: 'Promotion League' },
+    { id: 207, name: 'Super League' },
+    { id: 208, name: 'Challenge League' },
+    { id: 209, name: 'Promotion League' },
   ],
   '🇬🇷 Greece': [
-    { id: 163, name: 'Super League' },
-    { id: 164, name: 'Super League 2' },
-    { id: 165, name: 'Gamma Ethniki' },
+    { id: 197, name: 'Super League' },
+    { id: 198, name: 'Super League 2' },
+    { id: 199, name: 'Gamma Ethniki' },
   ],
   '🇷🇴 Romania': [
-    { id: 172, name: 'Liga I' },
-    { id: 173, name: 'Liga II' },
-    { id: 174, name: 'Liga III' },
+    { id: 283, name: 'Liga I' },
+    { id: 284, name: 'Liga II' },
+    { id: 285, name: 'Liga III' },
   ],
   '🇨🇿 Czech Republic': [
-    { id: 100, name: 'Fortuna Liga' },
-    { id: 101, name: 'Fortuna:Národní liga' },
-    { id: 102, name: 'Divize' },
+    { id: 345, name: 'Fortuna Liga' },
+    { id: 346, name: 'Fortuna:Národní liga' },
+    { id: 347, name: 'Divize' },
   ],
   '🇵🇱 Poland': [
-    { id: 171, name: 'Ekstraklasa' },
-    { id: 176, name: 'I liga' },
-    { id: 177, name: 'II liga' },
+    { id: 106, name: 'Ekstraklasa' },
+    { id: 107, name: 'I liga' },
+    { id: 108, name: 'II liga' },
   ],
   '🇷🇸 Serbia': [
-    { id: 203, name: 'SuperLiga' },
-    { id: 204, name: 'Liga Serbia' },
-    { id: 205, name: 'Liga Serbia 3' },
+    { id: 286, name: 'SuperLiga' },
+    { id: 287, name: 'Liga Serbia' },
+    { id: 288, name: 'Liga Serbia 3' },
   ],
   '🇭🇷 Croatia': [
-    { id: 175, name: 'HNL' },
-    { id: 436, name: '1. NL' },
-    { id: 438, name: '2. NL' },
+    { id: 210, name: 'HNL' },
+    { id: 211, name: '1. NL' },
+    { id: 212, name: '2. NL' },
   ],
   '🇺🇦 Ukraine': [
-    { id: 182, name: 'Premier League' },
-    { id: 435, name: 'Pershа liha' },
-    { id: 439, name: 'Druha liha' },
+    { id: 333, name: 'Premier League' },
+    { id: 334, name: 'Persha liha' },
+    { id: 335, name: 'Druha liha' },
   ],
   '🇷🇺 Russia': [
-    { id: 203, name: 'Premier League' },
-    { id: 206, name: 'FNL' },
-    { id: 207, name: 'PFL' },
+    { id: 235, name: 'Premier League' },
+    { id: 236, name: 'FNL' },
+    { id: 237, name: 'PFL' },
   ],
 };
 
@@ -960,38 +961,59 @@ function setStatus(cls, txt) {
 /* ═══════════════════════════════════════════
    API
 ═══════════════════════════════════════════ */
-const SS = 'https://api.sofascore.com/api/v1';
-const WORKER = 'https://vitalytics-relay.vitamint1903.workers.dev';
+/* ═══════════════════════════════════════════
+   API-FOOTBALL CONFIG
+   Direct access — no CORS issues!
+═══════════════════════════════════════════ */
+const AF_KEY = 'f0aafded030bb0527bc0cbcb84ad8df0';
+const AF_BASE = 'https://v3.football.api-sports.io';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-async function api(path) {
-  const url = WORKER + '/api/v1' + path;
-  const r = await fetch(url, { signal: AbortSignal.timeout(15000) });
+async function afetch(endpoint) {
+  const r = await fetch(AF_BASE + endpoint, {
+    headers: {
+      'x-apisports-key': AF_KEY,
+    },
+    signal: AbortSignal.timeout(15000),
+  });
   if (!r.ok) throw new Error('HTTP ' + r.status);
-  return r.json();
+  const d = await r.json();
+  if (d.errors && Object.keys(d.errors).length) {
+    const msg = JSON.stringify(d.errors);
+    throw new Error('API error: ' + msg);
+  }
+  return d.response || [];
 }
 
-async function getSeason(tid) {
-  const d = await api(`/unique-tournament/${tid}/seasons`);
-  if (!d.seasons?.length) throw new Error('No seasons found');
-  return d.seasons[0].id;
+async function getSeasonYear(leagueId) {
+  const data = await afetch(`/leagues?id=${leagueId}&current=true`);
+  if (!data.length) throw new Error('League not found');
+  const seasons = data[0].seasons;
+  const current = seasons.find(s => s.current) || seasons[seasons.length - 1];
+  return current.year;
 }
 
-async function getTeams(tid, sid) {
-  const d = await api(`/unique-tournament/${tid}/season/${sid}/teams`);
-  return d.teams || [];
+async function getPlayersPage(leagueId, season, page) {
+  return afetch(`/players?league=${leagueId}&season=${season}&page=${page}`);
 }
 
-async function getSquad(teamId) {
-  const d = await api(`/team/${teamId}/players`);
-  return (d.players || []).map(e => e.player || e);
-}
+async function getAllPlayers(leagueId, season) {
+  // First page also tells us total pages
+  const r = await fetch(AF_BASE + `/players?league=${leagueId}&season=${season}&page=1`, {
+    headers: { 'x-apisports-key': AF_KEY },
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  const d = await r.json();
+  const totalPages = d.paging?.total || 1;
+  let players = d.response || [];
 
-async function getStats(pid, tid, sid) {
-  try {
-    const d = await api(`/player/${pid}/unique-tournament/${tid}/season/${sid}/statistics/overall`);
-    return d.statistics || null;
-  } catch { return null; }
+  for (let page = 2; page <= totalPages; page++) {
+    await sleep(300);
+    const more = await getPlayersPage(leagueId, season, page);
+    players = players.concat(more);
+  }
+  return players;
 }
 
 /* ═══════════════════════════════════════════
@@ -1001,32 +1023,23 @@ async function runLoad() {
   const btn = document.getElementById('loadBtn');
   btn.disabled = true; btn.textContent = 'Loading…';
   setStatus('loading', 'Connecting…');
-  showLoading('gridArea', 'Connecting to SofaScore…', 'Fetching current season');
+  showLoading('gridArea', 'Connecting to API-Football…', 'Fetching current season');
 
   try {
     const tid = S.league;
-    const sid = await getSeason(tid);
-    const teams = await getTeams(tid, sid);
-    setStatus('loading', `0 / ${teams.length} teams`);
+    setStatus('loading', 'Getting season…');
+    const season = await getSeasonYear(tid);
 
-    const players = []; const seen = new Set();
+    showLoading('gridArea', `Loading ${S.leagueName} ${season}`, 'Fetching all players — this takes ~30 seconds…');
+    setStatus('loading', 'Fetching players…');
 
-    for (let i = 0; i < teams.length; i++) {
-      const team = teams[i];
-      setStatus('loading', `${i+1} / ${teams.length} — ${team.name}`);
-      showLoading('gridArea', `Loading ${team.name}`, `Team ${i+1} of ${teams.length} · fetching squad & stats…`);
+    const raw = await getAllPlayers(tid, season);
+    setStatus('loading', `Processing ${raw.length} players…`);
 
-      try {
-        const squad = await getSquad(team.id);
-        await sleep(350);
-        for (const p of squad) {
-          if (seen.has(p.id)) continue; seen.add(p.id);
-          const stats = await getStats(p.id, tid, sid);
-          await sleep(220);
-          if (!stats || (stats.appearances||0) < 3) continue;
-          players.push(buildPlayer(p, team, stats, tid, sid));
-        }
-      } catch(e) { console.warn(team.name, e); }
+    const players = [];
+    for (const entry of raw) {
+      const p = buildPlayer(entry, tid, season);
+      if (p) players.push(p);
     }
 
     calcPercentiles(players);
@@ -1042,13 +1055,13 @@ async function runLoad() {
     setStatus('error', 'Failed');
     document.getElementById('gridArea').innerHTML = `
       <div class="error-notice">
-        <strong>⚠️ Could not reach SofaScore</strong><br><br>
+        <strong>⚠️ Could not load data</strong><br><br>
         ${e.message}<br><br>
         <strong>Things to try:</strong><br>
-        1. Make sure you're using <strong>Chrome or Firefox</strong> (Safari blocks cross-site requests)<br>
-        2. Try disabling any <strong>ad blocker or privacy extension</strong> — they often block CORS proxies<br>
-        3. If hosted on a website, this should work fine — the issue only affects local file access in some browsers<br>
-        4. Wait 60 seconds and click Reload
+        1. Check your API key is correct<br>
+        2. Make sure you haven't exceeded 100 requests today<br>
+        3. Wait 60 seconds and click Reload<br>
+        4. Check dashboard.api-football.com for your usage
       </div>`;
   }
 
@@ -1056,36 +1069,69 @@ async function runLoad() {
 }
 
 /* ═══════════════════════════════════════════
-   BUILD PLAYER OBJECT
+   BUILD PLAYER OBJECT (API-Football format)
 ═══════════════════════════════════════════ */
-function buildPlayer(p, team, s, tid, sid) {
-  const apps = s.appearances || 1;
-  const pg = k => +(((s[k]||0)/apps).toFixed(2));
-  const pct = k => +(s[k]||0).toFixed(1);
+function mapPos(p) {
+  const pos = (p || '').toLowerCase();
+  if (pos === 'goalkeeper') return 'GK';
+  if (pos === 'defender') return 'D';
+  if (pos === 'midfielder') return 'M';
+  if (pos === 'attacker') return 'F';
+  return 'M';
+}
+
+function buildPlayer(entry, tid, season) {
+  const p = entry.player;
+  const stats = (entry.statistics || [])[0];
+  if (!p || !stats) return null;
+
+  const apps = stats.games?.appearences || 0;
+  if (apps < 3) return null;
+
+  const mins = stats.games?.minutes || 0;
+  const g = k => {
+    const v = stats[k[0]]?.[k[1]] || 0;
+    return apps > 0 ? +(v / apps).toFixed(2) : 0;
+  };
+  const pct = k => +(stats[k[0]]?.[k[1]] || 0);
+
+  const team = stats.team || {};
+
   return {
-    id: p.id, name: p.name,
-    shortName: p.shortName || p.name.split(' ').pop(),
-    pos: p.position || 'M',
-    posDetail: p.positionName || '',
-    teamId: team.id, teamName: team.name,
-    teamShort: team.shortName || team.name.split(' ')[0],
-    nat: (p.nationality||{}).alpha2 || '',
-    age: p.age || 0, height: p.height || null,
-    tid, sid,
+    id: p.id,
+    name: p.name,
+    shortName: p.name.split(' ').pop(),
+    pos: mapPos(stats.games?.position),
+    posDetail: stats.games?.position || '',
+    teamId: team.id,
+    teamName: team.name || '',
+    teamShort: (team.name || '').split(' ')[0],
+    nat: p.nationality || '',
+    age: p.age || 0,
+    height: p.height || null,
+    tid, season,
     raw: {
-      apps, mins: s.minutesPlayed||0,
-      goals: pg('goals'), assists: pg('assists'),
-      shots: pg('totalShots'), shotsOT: pg('shotsOnTarget'),
-      keyPasses: pg('keyPasses'), passAcc: pct('accuratePassesPercentage'),
-      dribbles: pg('successfulDribbles'),
-      tackles: pg('tackles'), interceptions: pg('interceptions'),
-      clearances: pg('clearances'),
-      aerialWon: pct('aerialDuelsWon'), duelsWon: pct('duelsWon'),
-      saves: pg('saves'), savePct: pct('savePercentage'),
-      cleanSheets: s.cleanSheet||0,
-      xg: pg('expectedGoals'), xa: pg('expectedAssists'),
-      bigChances: pg('bigChancesCreated'),
-      yellowCards: s.yellowCards||0, redCards: s.redCards||0,
+      apps, mins,
+      goals:        g(['goals','total']),
+      assists:      g(['goals','assists']),
+      shots:        g(['shots','total']),
+      shotsOT:      g(['shots','on']),
+      keyPasses:    g(['passes','key']),
+      passAcc:      pct(['passes','accuracy']),
+      dribbles:     g(['dribbles','success']),
+      tackles:      g(['tackles','total']),
+      interceptions:g(['tackles','interceptions']),
+      clearances:   g(['tackles','blocks']),
+      aerialWon:    pct(['duels','won']) ,
+      duelsWon:     pct(['duels','won']),
+      saves:        g(['goals','saves']),
+      savePct:      apps > 0 ? +((( stats.goals?.saves||0) / Math.max(stats.goals?.saves||0 + stats.goals?.conceded||0, 1)) * 100).toFixed(1) : 0,
+      cleanSheets:  stats.games?.lineups ? (stats.goals?.conceded === 0 ? 1 : 0) : 0,
+      xg:           g(['goals','total']),
+      xa:           g(['goals','assists']),
+      bigChances:   g(['shots','on']),
+      yellowCards:  stats.cards?.yellow || 0,
+      redCards:     stats.cards?.red || 0,
     },
     pcts: {}, score: 0,
   };
@@ -1890,3 +1936,4 @@ initPicker();
 
 </body>
 </html>
+
